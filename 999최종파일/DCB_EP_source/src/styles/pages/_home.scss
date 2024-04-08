@@ -1,0 +1,17 @@
+@charset "UTF-8";
+
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+@import '@/styles/base/fonts';
+@import '@/styles/base/reset';
+
+.home_content{
+    position: relative;
+    width:100%;
+    overflow: hidden;;
+}
+
+
+
+

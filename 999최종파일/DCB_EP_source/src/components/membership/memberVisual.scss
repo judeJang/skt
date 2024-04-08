@@ -1,0 +1,51 @@
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+
+.visual{
+    position: relative;
+    height:500px;
+    padding-top: 74px;
+    background: #3617ce;
+    text-align: center;
+    @include transition(0.2s);
+    h1{
+        font-size: 48px;
+        font-weight: $fw-eBold;
+        letter-spacing: -0.1px;
+        color:$white;
+    }
+    p{
+        margin-top: 40px;
+        font-size: 20px;
+        line-height: 1.6;
+        letter-spacing: -0.1px;
+        color:$white;
+    }
+    .img_box{
+        position: relative;
+        left: -6px;
+        margin-top: 37px;
+        animation: move 5s infinite;
+    }
+
+
+    @include md-mo{
+        height: 350px;
+        padding-top: 50px;
+        h1{
+            font-size: 28px;
+        }
+        p{
+            margin-top: 16px;
+            font-size: 12px;
+        }
+        .img_box{
+            left:-1px;
+            margin-top: 30px;
+            img,source{
+                width:half(415);
+            }
+        }
+    }
+}

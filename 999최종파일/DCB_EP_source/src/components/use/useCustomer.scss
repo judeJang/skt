@@ -1,0 +1,114 @@
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+
+.use_cs_container{
+    position: relative;
+    max-width:1282px;
+    margin:0 auto;
+    padding:140px 0;
+    h2{
+        font-size: 38px;
+        color:#121212;
+        font-weight: $fw-eBold;
+        strong{color:$primary}
+    }
+    .cs_container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 65px;
+        .box{
+            display: inline-flex;
+            align-items: center;
+            width: 620px;
+            height:272px;
+            border-radius: 25px;
+            border:1px solid #ccc;
+            padding: 0 50px;
+            &.link{
+                p{
+                    &::after{
+                        content: "";
+                        display: inline-block;
+                        width: 13px;
+                        height: 24px;
+                        background: url('@/assets/imgs/use/p_bottom_arr.png') no-repeat ;
+                        background-size:13px 24px ;
+                        vertical-align: middle;
+                    }
+                }
+            }
+            p{
+                margin-left: 50px;
+                font-size: 28px;
+                line-height: 40px;
+                color:$black;
+                font-weight: $fw-bold;
+            }
+        }
+    }
+
+
+    @media (max-width:1282px){
+        $base:1282px;
+        padding:140px 24px;
+        .cs_container{
+            .box{
+                width:calc(50% - 10px);
+                height:cVw(272px, $base);
+                border-radius: cVw(25px, $base);
+                padding: 0 cVw(40px, $base);
+                &.link{
+                    p{
+                        &::after{
+                            width: cVw(13px, $base);
+                            height: cVw(24px, $base);
+                            background-size:cVw(13px, $base) cVw(24px, $base) ;
+                        }
+                    }
+                }
+                p{
+                    margin-left: cVw(30px, $base);
+                    font-size: cVw(28px, $base);
+                    line-height: cVw(40px, $base);
+                }
+            }
+        }
+    }
+
+
+    @include md-mo{
+        padding:34px 33px 90px;
+        h2{
+            font-size: 19px;
+            line-height: 26px;
+        }
+        .cs_container{
+            flex-direction: column;
+            margin-top: 22px;
+            .box{
+                width: 100%;
+                height:128px;
+                border-radius: 15px;
+                padding: 0 25px;
+                +.box{margin-top: 20px;}
+                &.link{
+                    p{
+                        &::after{
+                            width: 7px;
+                            height: 12px;
+                            background-size:7px 12px ;
+                        }
+                    }
+                }
+                img,source{width:66px;}
+                p{
+                    margin-left: 25px;
+                    font-size: 14px;
+                    line-height: 20px;
+                }
+            }
+        }
+    }
+}

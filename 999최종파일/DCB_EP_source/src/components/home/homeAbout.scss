@@ -1,0 +1,119 @@
+@charset "UTF-8";
+
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+
+.about_event{
+    padding:150px 0 80px;
+    .inner_wrap{
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        max-width:$pc-fit-size;
+        margin:0 auto;
+        .text_box{
+            padding-left: 120px;
+            @include transition(0.3s);
+            h2{
+                font-size: 44px;
+                font-weight: $fw-eBold;
+                color:$black;
+                line-height: 1;
+                span{font-weight: $fw-eBold;}
+                strong{
+                    font-weight: $fw-eBold;
+                    color:$primary
+                }
+                + p{margin-top: 27px;}
+            }
+            p{
+                font-size: 20px;
+                color:$black;
+                line-height: 36px;
+                letter-spacing: -0.1px
+            }
+            button{
+                @include arr-btn;
+                margin-top: 53px;
+                background: $primary;
+            }
+        }
+        .img_box{
+            padding-right: 90px;
+            @include transition(0.3s);
+        }
+    }//inner_wrap
+
+    @media (max-width:1292px){
+        .inner_wrap{
+            .text_box{padding-left: 48px;}
+            .img_box{padding-right: 16px;}
+        }
+    }
+    @media (max-width:1073px){
+        .inner_wrap{
+            .text_box{padding-left: 16px;}
+            .img_box{
+                padding-right: 0px;
+                img, source{width:400px;}
+            }
+        }
+    }
+    
+    //layout 변경
+    @media (max-width:888px){
+        .inner_wrap{
+            flex-direction: column;
+            .text_box{
+                padding-left: 0;
+                text-align: center;
+                button{
+                    margin:30px auto 0;
+                }
+            }
+            .img_box{
+                margin-top: 66px;
+                padding-right: 0px;
+            }
+        }
+    }
+
+    @include md-mo{
+        padding:85px 0 66px;
+        .inner_wrap{
+            .text_box{
+                h2{
+                    font-size: half(56);
+                    +p{margin-top: 14px}
+                }
+                p{
+                    font-size: half(24);
+                    line-height: half(38);
+                    text-align: center;
+                }
+            }
+            .img_box{
+                img, source{width:320px}
+            }
+        }
+    }
+}
+
+
+/*
+.inner_wrap{
+    .text_box{
+        h2{
+            span{}
+            strong{}
+            +p{}
+        }
+        p{}
+        button{}
+    }
+}
+.img_box{}
+
+*/

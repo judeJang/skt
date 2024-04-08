@@ -1,0 +1,187 @@
+@charset "UTF-8";
+
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+
+
+.home_swiper_container{
+    position: relative;
+    width: 100%;
+    height: 780px;
+    overflow: hidden;
+    .home_swiper{
+        position: absolute;
+        width: 1920px;
+        height: 780px;
+        left:50%;
+        top:0;
+        transform: translateX(-50%);
+        .swiper-slide{
+            img, source{
+                position: absolute;
+                display: block;
+                left:50%;top:50%;
+                transform: translate(-50%, -50%);
+                height:100%;
+            }
+        }
+    }
+    // module
+    .swiper-button-prev,
+    .swiper-button-next{
+        position: absolute;
+        left:50%;
+        width:23px;
+        height:38px;
+        transform: translateX(-714px);
+        background: url('@/assets/imgs/home/m_main_swiper_arr.png') no-repeat center;
+        background-size: 100%;
+        &::after{display: none;}
+        &:disabled{opacity: 0.5;}
+    }
+    .swiper-button-next{
+        transform: translateX(685px) rotate(180deg);
+    }
+    .controller{
+        position: absolute;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        left:50%;
+        transform: translateX(-50%);
+        bottom:58px;
+        z-index:5;
+        .num{
+            display: inline-flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: $fw-bold;
+            .prev_btn, .next_btn{
+                width:8px; 
+                height: 12px;  
+                margin-right: 15px;             
+                background: url('@/assets/imgs/home/paging_arr.png') no-repeat center / 8px 12px;
+            }
+            .next_btn{
+                transform: rotate(180deg);
+                margin-right: 0;
+                margin-left: 15px;
+            }
+            span{
+                position: relative;
+                padding:0 15px;
+                &.cur{
+                    color:$white;
+                    margin-right: 4px;
+                }
+                &.total{
+                    padding-left: 0;
+                    color:rgba($white, 0.5);
+                    &::before{
+                        content: "/";
+                        padding-right: 15px;
+                    }
+                }
+            }
+        }
+        button{
+            width: 11px;
+            margin-left: 33px;
+            text-align: center;
+        }
+    }
+
+    // 배너 버튼
+    @media (max-width:1480px){
+        .swiper-button-prev,
+        .swiper-button-next{
+            transform: translateX(0);
+            left:16px;
+        }
+        .swiper-button-next{
+            left: auto;
+            right:16px;
+            transform: translateX(0) rotate(180deg);
+        }
+    }
+    //배너 이미지
+    @media (max-width:1196px){
+        height:500px;
+        .home_swiper{
+            width: 100%;
+            height: 500px;
+            .swiper-slide{
+                overflow: hidden;
+                img, source{
+                    position: absolute;
+                    display: block;
+                    left:50%;top:50%;
+                    transform: translate(-50%, -50%);
+                    height:100%;
+                }
+            }
+        }
+        .controller{bottom:38px;}
+    }
+
+    // mo
+    @include md-mo{
+        height:auto;
+        .home_swiper{
+            position: static;
+            width:100%;
+            height:auto;
+            transform: translateX(0);
+            .swiper-slide{
+                position: relative;
+                overflow: hidden;
+                img, source{
+                    position: static;
+                    width:100%;
+                    transform: translate(0,0);
+                }
+            }
+        }
+        // module
+        .swiper-button-prev,
+        .swiper-button-next{
+            margin-top: vw(20px);
+            width:half(23);
+            height:half(38);
+            background: url('@/assets/imgs/home/m_main_swiper_arr.png') no-repeat center;
+            background-size: 100%;
+            &::after{display: none;}
+        }
+
+        .controller{
+            bottom:vw(29px);
+            .num{
+                font-size: vw(12px);
+                .prev_btn, .next_btn{
+                    width:vw(12px); 
+                    height: vw(20px);  
+                    margin-right: vw(20px);             
+                    background-size: vw(12px) vw(20px);
+                }
+                .next_btn{
+                    margin-right: 0;
+                    margin-left: vw(20px);
+                }
+                span{
+                    padding:0 vw(20px);
+                    font-size: vw(20px);
+                    &.cur{
+                        color:$white;
+                        margin-right: vw(6px);
+                    }
+                    &.total{
+                        &::before{padding-right: vw(20px);}
+                    }
+                }
+            }
+            button{margin-left: vw(40px);}
+        }
+    }
+}

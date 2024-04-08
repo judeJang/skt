@@ -1,0 +1,12 @@
+$fontPath : '/src/assets/fonts/';
+
+
+@font-face {font-family: 'NanumSquareNeo';font-style: normal;font-weight: 300;src: url(#{$fontPath}NanumSquareNeoTTF-aLt.woff2) format('woff2'),url(#{$fontPath}NanumSquareNeoTTF-aLt.woff) format('woff'),url(#{$fontPath}NanumSquareNeoOTF-Lt.otf) format('opentype');}
+
+@font-face {font-family: 'NanumSquareNeo';font-style: normal;font-weight: 400;src: url(#{$fontPath}NanumSquareNeoTTF-bRg.woff2) format('woff2'),url(#{$fontPath}NanumSquareNeoTTF-bRg.woff) format('woff'),url(#{$fontPath}NanumSquareNeoOTF-Rg.otf) format('opentype');}
+
+@font-face {font-family: 'NanumSquareNeo';font-style: normal;font-weight: 500;src: url(#{$fontPath}NanumSquareNeoTTF-cBd.woff2) format('woff2'),url(#{$fontPath}NanumSquareNeoTTF-cBd.woff) format('woff'),url(#{$fontPath}NanumSquareNeoOTF-Bd.otf) format('opentype');}
+
+@font-face {font-family: 'NanumSquareNeo';font-style: normal;font-weight: 600;src: url(#{$fontPath}NanumSquareNeoTTF-dEb.woff2) format('woff2'),url(#{$fontPath}NanumSquareNeoTTF-dEb.woff) format('woff'),url(#{$fontPath}NanumSquareNeoOTF-Eb.otf) format('opentype');}
+
+@font-face {font-family: 'NanumSquareNeo';font-style: normal;font-weight: 700;src: url(#{$fontPath}NanumSquareNeoTTF-eHv.woff2) format('woff2'),url(#{$fontPath}NanumSquareNeoTTF-eHv.woff) format('woff'),url(#{$fontPath}NanumSquareNeoOTF-Hv.otf) format('opentype');}

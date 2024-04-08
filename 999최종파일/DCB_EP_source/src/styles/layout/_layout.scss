@@ -1,0 +1,14 @@
+/*공통*/
+.only_pc{display:block !important;}
+.only_mo{display: none !important;}
+
+@include md-mo{
+    .only_pc{display:none !important;}
+    .only_mo{display: block !important;}
+}
+
+.content{width: 100%;}
+.inner_wrap{
+    @include transition(0.3s);
+}
+

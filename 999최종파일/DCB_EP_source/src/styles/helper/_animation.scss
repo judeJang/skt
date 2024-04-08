@@ -1,0 +1,43 @@
+//fade in out
+//deem 공용 cf: modal
+.fade-ani-enter-active{transition: all .25s ease-out;}
+.fade-ani-leave-active {transition: all .25s ease-in;}
+.fade-ani-enter,
+.fade-ani-leave-to {opacity: 0;}
+
+//slide-down cf: cpp sub_top
+.slide-down-enter-active{transition: all .25s .05s ease-in-out;}
+.slide-down-leave-active {transition: all .25s ease-in-out;}
+.slide-down-enter, 
+.slide-down-leave-to{transform:translateY(-100%)}
+
+//slide-up cf: 전체 modal
+.slide-up-enter-active{
+    transition: transform .4s cubic-bezier(0.25, 0.46, 0.45, 0.94),
+                opacity .15s linear;
+}
+.slide-up-leave-active {
+    transition: transform .3s ease-out,
+                opacity .15s .2s linear;
+}
+.slide-up-enter, 
+.slide-up-leave-to{
+    transform:translateY(100%);
+    opacity: 0;
+}
+
+@keyframes move {
+    0% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+
+@keyframes rolling {
+    0% {transform: translateX(0);}
+    100% {transform: translateX(-100%);}
+  }
+

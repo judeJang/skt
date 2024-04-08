@@ -1,0 +1,45 @@
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+
+.tabs{
+    display:inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin:70px 0 44px;
+    background-color: #f3f5fa;
+    border-radius: 32px;;
+    padding:7px 10px;
+    button{
+        display: inline-flex;
+        justify-content: center;
+        align-items: center;
+        width:211px;
+        height:48px;
+        font-size: 20px;
+        font-weight: $fw-light;
+        color:#898989;
+        border-radius: 24px;
+        &.active{
+            position: relative;
+            font-weight: $fw-bold;
+            background-color: $white;
+            color:$black;
+            box-shadow: 0px 0px 2px 3px rgba($black,0.03);
+            z-index: 2;
+        }
+    }  
+    
+    @include md-mo{
+        margin:20px 0;
+        padding:5px 6px;
+        button{
+            width:131.5px;
+            height:30px;
+            border-radius:15px;
+            font-size: 13px;
+        }
+    } 
+
+    
+}

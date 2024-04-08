@@ -1,0 +1,30 @@
+{
+    "name": "T",
+    "version": "0.1.0",
+    "private": true,
+    "scripts": {
+        "serve": "vue-cli-service  --mode local serve --port 8090",
+        "build:alpha": "vue-cli-service --mode alpha build",
+        "build:beta": "vue-cli-service --mode beta build",
+        "build:prod": "vue-cli-service --mode production build",
+        "build": "vue-cli-service build"
+    },
+    "dependencies": {
+        "axios": "^1.4.0",
+        "sass": "^1.54.7",
+        "sass-loader": "^13.0.2",
+        "swiper": "^9.3.2",
+        "vue": "^3.2.37",
+        "vue-router": "^4.1.4"
+    },
+    "devDependencies": {
+        "@vue/cli-plugin-router": "~5.0.0",
+        "@vue/cli-plugin-typescript": "~5.0.0",
+        "@vue/cli-service": "~5.0.0",
+        "typescript": "~4.5.5"
+    },
+    "browserslist": [
+        "last 3 Chrome versions",
+        "last 3 Safari versions"
+    ]
+}

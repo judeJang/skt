@@ -1,0 +1,172 @@
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+
+.benefit{
+    max-width:$pc-fit-size;
+    margin:0 auto;
+    padding: 134px 20px 138px ;
+    h2{
+        font-size: 38px;
+        font-weight: $fw-eBold;
+        line-height: 52px;
+        color:$black;
+        letter-spacing: -0.4px;
+        span{font-weight: $fw-eBold;}
+        strong{
+            font-weight: $fw-eBold;
+            color:$primary
+        }
+    }
+   .flex_container{
+        display: flex;
+        justify-content: space-between;
+        margin-top: 50px;
+        .name{
+            font-size: 36px;
+            line-height: 50px;
+            font-weight: $fw-bold;
+            letter-spacing: -0.4px;
+            strong{
+                color:$primary;
+                font-weight: $fw-bold;
+            }
+            .small{font-size: 26px;}
+
+        }
+        .secret{
+            position: absolute;
+            font-size: 20px;
+            left:43px;
+            bottom:52px;
+            color:#959595;
+        }
+
+        .first,
+        .second{
+            position: relative;
+            width:620px;
+            height:680px;
+            padding:61px 70px 52px 43px;
+            background: #f4f6fb;
+            border-radius: 25px;
+            .img_box{
+                margin-top: 58px;
+                text-align: right;
+            }
+        }
+        .second{
+            padding-right:68px;
+            padding-top: 56px;
+            .img_box{margin-top: 47px;}
+        }
+    }
+    .go_benefit{
+        @include arr-btn;
+        margin:97px auto 0;
+        width: 360px;
+        background: $primary;
+        color:$white;
+    }
+
+    @media (max-width:1303px){
+        $base : 1303px;
+        .flex_container{
+            margin-top:cVw(50px,$base);
+            .name{
+                font-size: cVw(36px,$base);
+                line-height: cVw(50px,$base);
+                .small{font-size: cVw(26px,$base);}
+            }
+            .secret{
+                font-size: cVw(20px,$base);;
+                left:cVw(43px,$base);
+                bottom:cVw(52px,$base);
+            }
+    
+            .first,
+            .second{
+                width:calc(50% - 10px);
+                height:cVw(680px,$base);
+                padding:cVw(61px,$base) cVw(70px,$base) cVw(52px,$base) cVw(43px,$base);
+                border-radius: cVw(25px,$base);
+                .img_box{
+                    margin-top: cVw(58px,$base);
+                }
+            }
+            .first .img_box {
+                img,source{
+                    width:cVw(337px, $base);
+                }
+            }
+            .second{
+                padding-right:cVw(68px,$base);
+                padding-top: cVw(56px,$base);
+                .img_box{
+                    margin-top: cVw(47px,$base);
+                    img,source{
+                        width:cVw(366px, $base);
+                    }
+                }
+            }
+        }
+    }
+
+    // mo
+    @include md-mo{
+        padding:36px 35px 90px;
+        h2{
+            font-size: 19px;
+            line-height: 26px;
+            letter-spacing: 0;
+        }
+
+        .flex_container{
+            align-items: center;
+            flex-direction: column;
+            margin-top: 25px;
+            .name{
+                font-size: 19px;
+                line-height: 26px;
+                 letter-spacing: -0.8px;
+                .small{font-size: 13px;}
+            }
+            .secret{
+                position: static;
+                margin-top: 8px;
+                font-size: 11px;
+            }
+            .first,
+            .second{
+                width: 100%;
+                height: auto;
+                padding:30px 19px 26px 23px;
+            }
+            .first{
+                .img_box{
+                    margin-top: 26px;
+                    img,source{
+                        // width:vw(337px);
+                        width:half(337);
+                    }
+                }
+            }
+            .second{
+                margin-top: 23px;
+                padding-left: 20px;
+                .img_box{
+                    margin-top: 14px;
+                    img,source{
+                        // width:vw(366px)
+                        width:half(336);
+                    }
+                }
+                .secret{margin-top: 26px;}   
+            }
+        }
+        .go_benefit{
+            margin-top: 33px;
+            width: 100%;
+        }
+    }//E md
+}

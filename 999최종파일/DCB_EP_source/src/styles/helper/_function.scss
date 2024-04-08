@@ -1,0 +1,19 @@
+@charset "UTF-8";
+
+@function vw($value){
+    $vw-context: (720px * .01) ;
+    @return calc($value/$vw-context) * 1vw;
+}
+
+@function cVw($value, $base){
+    $vw-context: ($base * .01) ;
+    @return calc($value/$vw-context) * 1vw;
+}
+
+@function rem($value, $base-font-size : 16px){
+    @return ($value / $base-font-size) * 1rem;
+}
+
+@function half($size){
+    @return calc($size/ 2) * 1px;
+}

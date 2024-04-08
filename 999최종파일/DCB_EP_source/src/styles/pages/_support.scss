@@ -1,0 +1,19 @@
+ @charset "UTF-8";
+
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+
+
+.support_content{
+    max-width:1223px;
+    margin:0 auto;
+    padding:66px 0 140px;
+    @include md-fit{
+        padding:66px 24px 140px;
+    }
+    //mo
+    @include md-mo{
+        padding:30px 15px 45px;
+    }
+}

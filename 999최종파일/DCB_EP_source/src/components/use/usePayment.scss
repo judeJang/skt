@@ -1,0 +1,217 @@
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+
+.use_payment_container{
+    background: #f4f6fb;
+    .inner_wrap{
+        max-width:1282px;
+        margin:0 auto;
+        padding: 133px 0 96px;
+        
+        h2{
+            font-size: 38px;
+            line-height: 52px;
+            font-weight: $fw-eBold;
+            color:$black;
+            text-align: center;
+            letter-spacing: -0.4px;
+            strong{
+                font-size: 38px;
+                line-height: 52px;
+                color:$primary;
+                font-weight: $fw-eBold;
+            }
+        }
+
+        .navi_swiper_wrap{
+            display: flex;
+            justify-content: center;
+            margin-top: 59px;
+            .navi_swiper{
+                .swiper-slide{
+                    position: relative;
+                    width:59px;
+                    height:59px;
+                    border-radius: 100%;
+                    overflow: hidden;
+                    cursor: pointer;
+                    &::after{
+                        content: "";
+                        position: absolute;
+                        width:100%;
+                        height:100%;
+                        left:0;top:0;
+                        border-radius: 100%;;
+                        border:2px solid $primary;
+                        transform:scale(0.9);
+                        transform-origin: center;
+                        opacity: 0;
+                        box-sizing: border-box;
+                        @include transition(0.3s)
+                    }
+                    &.active::after{
+                        transform:scale(1);
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+
+        .info_swiper_container{
+            position: relative;
+            display: flex;
+            justify-content: center;
+            margin-top: 50px;
+            .swiper{
+                width: 666px;
+                .swiper-slide{
+                    text-align: center;
+                    .step{
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin: 89px auto 0;
+                        width: 113px;
+                        height: 38px;
+                        background: $white;
+                        border-radius:19px;
+                        font-size: 14px;
+                        font-weight: $fw-havy;
+                        color:$primary;
+                    } 
+                    .desc{
+                        margin-top: 14px;
+                        font-size: 20px;
+                        line-height: 36px;
+                        font-weight: $fw-bold;
+                    }
+                }
+            }
+
+            // module
+            .prev,
+            .next{
+                position: absolute;
+                left:50%;
+                width:16px;
+                height:27px;
+                top: 208px;
+                transform: translateX(-241px);
+                background: url('@/assets/imgs/use/p_arr.png') no-repeat center;
+                background-size: 100%;
+                &::after{display: none;}
+                &:disabled{opacity: 0.2;}
+                z-index:10;
+            }
+            .next{
+                transform: translateX(216px) rotate(180deg);
+            }
+            .swiper-pagination{
+                top: 470px;
+                height: 11px;
+                .swiper-pagination-bullet{
+                    width: 11px;
+                    height: 11px;
+                    margin:0 6px;
+                    border-radius: 100%;
+                    background: #7a7a7a;
+                    opacity: 1;
+                    @include transition(0.3s);
+                    transform-origin: center;
+                    &-active{
+                        width: 34px;
+                        height:11px;
+                        border-radius: 5px;
+                        background: $primary;
+                    }
+                }
+            }
+
+            
+        }
+    }
+
+    //mo
+    @include md-mo{
+        .inner_wrap{
+            padding: 86px 0 110px;
+            
+                h2{
+                    font-size: 19px;
+                    line-height: 26px;
+                    letter-spacing: -0.4px;
+                    strong{
+                        font-size: 19px;
+                        line-height: 26px;
+                    }
+                }
+        
+                .navi_swiper_wrap{
+                    margin-top: 37px;
+                    .navi_swiper{
+                        padding:0 16px;
+                        .swiper-slide{
+                            width:51px;
+                            height:51px;
+                            img,source{width:51px;}
+                        }
+                    }
+                }
+        
+                .info_swiper_container{
+                    margin-top: 38px;
+                    padding:0 55px;
+                    .swiper{
+                        width: 100%;
+                        width: 258px;
+                        .swiper-slide{
+                            img,source{width:258px;}
+                            .step{
+                                margin: 56px auto 0;
+                                width: 78px;
+                                height: 26px;
+                                border-radius:13px;
+                                font-size: 11px;
+                                font-weight: $fw-havy;
+                                color:$primary;
+                            } 
+                            .desc{
+                                margin-top: 15px;
+                                font-size: 14px;
+                                line-height: 20px;
+                            }
+                        }
+                    }
+        
+                    // module
+                    .prev,
+                    .next{
+                        width:11px;
+                        height:19px;
+                        top: 140px;
+                        transform: translateX(-164px);
+                        background: url('@/assets/imgs/use/m_arr.png') no-repeat center;
+                        background-size: 100%;
+                    }
+                    .next{
+                        transform: translateX(153px) rotate(180deg);
+                    }
+                    .swiper-pagination{
+                        top: 328px;
+                        height: 8px;
+                        .swiper-pagination-bullet{
+                            width: 8px;
+                            height: 8px;
+                            margin:0 5px;
+                            &-active{
+                                width: 24px;
+                                height:8px;
+                                border-radius: 4px;
+                            }
+                        }
+                    }
+                }
+            }
+    }
+}

@@ -1,0 +1,1 @@
+export const API_PROMOTION_LIST = '/portal/api/promotionList'

@@ -1,0 +1,87 @@
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+
+.support_center{
+    margin-top: 80px;
+    h2{
+        font-size: 28px;
+        font-weight: $fw-eBold;
+        color:$black;
+    }
+    .center_info{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-top: 40px;
+        .box{
+            display: inline-flex;
+            align-items: center;
+            width: 380px;
+            height: 160px;
+            padding-left: 45px;
+            border:1px solid #ccc;
+            border-radius: 25px;
+            .text_box{
+                margin-left: 38px;
+                font-size: 20px;
+                font-weight: $fw-eBold;
+                line-height: 34px;
+                color:$black;
+                strong{color: $primary;}
+            }
+        }
+
+    }
+
+    @media (max-width:1223px){
+        $base:1223px;
+        .center_info{
+            .box{
+                width: cVw(370px, $base);
+                height: cVw(160px, $base);
+                padding-left: cVw(45px, $base);
+                border-radius: cVw(25px, $base);
+                .text_box{
+                    margin-left: cVw(38px, $base);
+                    font-size: cVw(20px, $base);
+                    line-height: cVw(34px, $base);
+                }
+            }
+    
+        }
+    }
+
+
+
+    //mo
+    @include md-mo{
+        margin-top: 30px;
+        h2{font-size: 19px;}
+        .center_info{
+            justify-content: flex-start;
+            flex-direction: column;
+            margin-top: 18px;
+            .box{
+                width: 100%;
+                height: auto;
+                padding:40px 33px;
+                border-radius: 15px;
+                &:nth-of-type(2),
+                &:nth-of-type(3){
+                    margin-top: 18px;
+                    img,source{width:49px;}
+                }
+                img,source{width:50px;}
+                .text_box{
+                    margin-left: 35px;
+                    font-size: 14px;
+                    line-height: 24px;
+                    letter-spacing: -0.4px;
+                }
+            }
+    
+        }
+    }//E mo
+    
+}

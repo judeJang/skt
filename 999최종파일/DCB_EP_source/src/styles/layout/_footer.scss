@@ -1,0 +1,75 @@
+footer{
+    background: #1b1b1b;
+    .inner_wrap{
+        position: relative;
+        max-width:$pc-fit-size;
+        padding:60px 0 80px;
+        margin:0 auto;
+        .text_container{
+            padding-left: 20px;
+            .logo + .info{margin-top: 21px;}
+            .info{
+                font-size: 14px;
+                line-height: 30px;
+                font-weight: $fw-light;
+                color:$white;
+                a{
+                    font-weight: $fw-light;
+                    &:hover{text-decoration: underline;}
+                }
+            }
+            .copyright{
+                margin-top: 24px;
+                font-size: 14px;
+                line-height: 30px;
+                font-weight: $fw-light;
+                color:$white;
+            }
+        }
+        .footer_link{
+            position: absolute;
+            display: inline-flex;
+            top: 55px;
+            right: 0;
+            justify-content: center;
+            align-items: center;
+            height:30px;
+            padding:0 15px;
+            border-radius: 15px;
+            background: #313131;
+            font-size: 12px;
+            font-weight: $fw-bold;
+            color:$white;
+            img{margin-left: 6px;}
+            
+        }
+
+        @include md-fit{
+            .footer_link{right: 20px;}
+        }
+
+        @include md-mo{
+            padding:40px 34px 135px;
+            .text_container{
+                padding:0;
+                .logo{
+                    img{width:half(244)}
+                    + .info{margin-top: 20px;}
+                }
+                .info{
+                    font-size: 11px;
+                    line-height: 17px;
+                }
+                .copyright{
+                    font-size: 9px;
+                    line-height: 17px;
+                }
+            }
+            .footer_link{
+                position: static;
+                margin-top: 25px;
+                img{width:half(12);}
+            }
+        }
+    }
+}

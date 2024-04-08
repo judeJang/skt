@@ -1,0 +1,190 @@
+@charset "UTF-8";
+
+@import '@/styles/helper/variables';
+@import '@/styles/helper/mixins';
+@import '@/styles/helper/function';
+
+.app_download{
+    padding:75px 0 70px;
+    background: #f4f6fb;
+    .inner_wrap{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row-reverse;
+        align-items: center;
+        max-width:$pc-fit-size;
+        margin:0 auto;
+        .text_box {
+            padding-right: 122px;
+            @include transition(0.3s);
+            h2{
+                font-size: 44px;
+                line-height: 58px;
+                font-weight: $fw-eBold;
+                color:$black;
+                strong{
+                    font-weight: $fw-eBold;
+                    color:$primary
+                }
+                + p{margin-top: 20px;}
+            }
+            p{
+                font-size: 20px;
+                color:$black;
+                line-height:36px;
+                letter-spacing: -0.1px;
+            }
+            .btn_box{
+                margin-top: 60px;
+                @include transition(0.3s);
+                >a {
+                    display: inline-flex;
+                    align-items: center;
+                    justify-content: center;
+                    margin-right: 17px;
+                    width: 200px;
+                    height: 64px;
+                    border-radius: 12px;
+                    font-size: 20px;
+                    color:$white;
+                    font-weight: $fw-bold;
+                    background: $black;
+                    &:last-of-type{margin-right: 0;}
+                    &.android::before{
+                        content:"" ;
+                        width: 22px;
+                        height: 20px;
+                        margin-right: 18px;
+                        background: url('@/assets/imgs/home/p_android.png') no-repeat center;
+                        background-size: cover;
+                        
+                    }
+                    &.apple::before{
+                        content:"" ;
+                        width: 18px;
+                        height: 22px;
+                        margin-right: 12px;
+                        background: url('@/assets/imgs/home/p_apple.png') no-repeat center ;
+                        background-size: cover;
+                    }
+                }
+            }
+        }
+        .img_box{
+            padding-left: 175px;
+            @include transition(0.3s);
+        }
+        
+    }
+
+    @media (max-width:1201px){
+        .inner_wrap{
+            .text_box{padding-right:50px;}
+            .img_box{padding-left:16px;}
+        }
+    }
+
+    @media (max-width:1055px){
+        .inner_wrap{
+            .text_box{padding-right:16px;}
+            .img_box{padding-left:0;}
+        }
+    }
+    //layout 변경
+    @media (max-width:945px){
+        .inner_wrap{
+            flex-direction: column;
+            .text_box{
+                padding-right:0;
+                text-align: center;
+                h2{
+                    +p{margin-top: 9px;}
+                }
+                .btn_box{
+                    margin-top: half(106);
+                    >a {
+                        display: flex;
+                        margin:0 auto;
+                        &:last-of-type{
+                            margin:15px auto 0;
+                        }
+                    }
+                }
+            }
+            .img_box{
+                position: relative;
+                left: 9px;
+                margin-top: 67px;
+                img,source{width:auto;}
+            }
+        }
+    }
+
+    @include md-mo{
+        padding:86px 0 90px;
+        .inner_wrap{
+            .text_box{
+                h2{
+                    font-size: half(56);
+                    line-height: half(68);
+                    
+                }
+                p{
+                    font-size: half(24);
+                    line-height: half(38);
+                    text-align: center;
+                }
+                .btn_box{
+                    margin-top: 49px;
+                    >a {
+                        width: half(416);
+                        height: half(105);
+                        border-radius: 8px;
+                        font-size: 16px;
+                        &.android::before{
+                            width: half(36);
+                            height: half(40);
+                            margin-right: 10px;
+                            background-size: cover;
+                        }
+                        &.apple::before{
+                            content:"" ;
+                            width: half(32);
+                            height: half(40);
+                            margin-right: 10px;
+                            background-size: cover;
+                            @include transition(0.3s)
+                        }
+                    }
+                }
+            }
+            .img_box{
+                img,source{width:half(542);}
+            }
+        }
+    }
+}
+
+
+
+
+/*
+.inner_wrap{
+            .text_box{
+                h2{
+                    +p{}
+                }
+                p{}
+                .btn_box{
+                    >a{
+                        &:last-of-type{margin-top: 15px;}
+                        &.android::before{}
+                        &.apple::before{}
+                    }
+                }
+            }
+            .img_box{}
+        }
+
+
+*/
